@@ -1,0 +1,26 @@
+body {
+    margin: 0;
+    line-height: normal;
+  }
+  
+  :root {
+    /* fonts */
+    --font-roboto: Roboto;
+    --font-inter: Inter;
+    --font-poppins: Poppins;
+    --font-grape-nuts: "Grape Nuts";
+  
+    /* font sizes */
+    --font-size-21xl: 40px;
+    --font-size-13xl: 32px;
+  
+    /* Colors */
+    --color-lightgoldenrodyellow-100: #c8e7b7;
+    --color-lightgray: #d4d4d4;
+    --color-black: #000;
+    --color-darkseagreen: #91b080;
+  
+    /* Border radiuses */
+    --br-5xs: 8px;
+    --br-xl:20px;
+}
