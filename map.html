@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="map" href="./global.css" />
+    <link rel="map-css" href="./map.css" />
+    <title>Map Page</title>
+    <style>
+        #map {
+            height: 400px;
+            width: 100%;
+        }
+
+        .navbar {
+            background-color: rgba(200, 231, 183, 0.6);
+            overflow: hidden;
+        }
+
+        .navbar a {
+            float: left;
+            display: block;
+            color: black;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+
+        .navbar a:hover {
+            background-color: #ddd;
+            /* color: black; */
+            color: rgba(200, 231, 183, 0.6);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <button class="map" onclick="window.location.href = 'map.html'">Map</button>
+        <a href="#when-it-use">When it Use?</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a href="#features">Features</a>
+        <a href="#onetouchaid">OneTouchAid</a>
+    </div>
+    <div id="map"></div>
+    <script src="https://js.api.here.com/v3/3.1/mapsjs-core.js"></script>
+    <script src="https://js.api.here.com/v3/3.1/mapsjs-service.js"></script>
+    <script>
+        function initMap() {
+            var platform = new H.service.Platform({
+                apikey: 'K3myhFwUALi0WuVPvXAEzQWu19zeA4lmxDxuNp7Mtnw'
+            });
+            var map = new H.Map(
+                document.getElementById('map'),
+                platform.createDefaultLayers().vector.normal.map,
+                {
+                    center: { lat: 52.5, lng: 13.4 },
+                    zoom: 10
+                }
+            );
+            var marker = new H.map.Marker({ lat: 52.5, lng: 13.4 });
+            map.addObject(marker);
+        }
+        window.onload = function () {
+            initMap();
+        };
+    </script>
+</body>
+
+</html>
